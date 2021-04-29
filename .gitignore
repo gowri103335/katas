@@ -1,0 +1,43 @@
+*.class
+*.pom
+*.sha1
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+#eclipse files
+bin/
+.classpath
+.project
+**/.settings/
+src/main/webapp/META-INF/MANIFEST.MF
+*.iml
+${env.M2_REPO}/*
+**/.factorypath
+
+#target folder
+**/target/
+.idea/
+**/*.log
+.DS_Store
+**/.classpath
+**/.project
+**/.springBeans
+**/.apt_generated
+**/.sonatype
+
+**/clean.txt
+**/tree.txt
+**/versions.txt
+**/eff.txt
+**/install.txt
+**/clm.txt
+**/deptree.txt
+**/tattletale.txt
+**/Junit*.txt
