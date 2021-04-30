@@ -1,6 +1,11 @@
 package com.bnpp.tictactoe.test;
 
+import static org.powermock.api.easymock.PowerMock.replay;
+import static org.powermock.api.easymock.PowerMock.reset;
+
+import org.easymock.EasyMock;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
@@ -12,20 +17,42 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bnpp.tictactoe.controller.TicTacToeController;
+import com.bnpp.tictactoe.helper.TicTacToeBoardHelper;
+import com.bnpp.tictactoe.helper.TicTacToePlayerHelper;
 
 @RunWith(PowerMockRunner.class)
 @PowerMockRunnerDelegate(SpringJUnit4ClassRunner.class)
-@PowerMockIgnore({ "com.sun.org.apache.xerces.*", "javax.xml.*", "org.xml.*", "javax.management.*", "org.w3c.*"})
+@PowerMockIgnore({ "com.sun.org.apache.xerces.*", "javax.xml.*", "org.xml.*", "javax.management.*", "org.w3c.*" })
 @ContextConfiguration(locations = { "/META-INF/test-context.xml" })
 public class TicTacToeControllerTest {
 
 	@Autowired
-	TicTacToeController controller;	
-	
+	TicTacToeController controller;
+
+	@Autowired
+	TicTacToeBoardHelper ticTacToeBoardhelper;
+
+	@Autowired
+	TicTacToePlayerHelper ticTacToePlayerHelper;
+
+	@Before
+	public void setUp() {
+		reset(ticTacToeBoardhelper);
+		reset(ticTacToePlayerHelper);
+	}
+
 	@Test
 	public void testPlayGame() {
+		ticTacToeBoardhelper.displayBoard(EasyMock.anyObject(String[][].class));
+		EasyMock.expectLastCall().anyTimes();
+		replay(ticTacToeBoardhelper);
+
+		ticTacToePlayerHelper.playGame(EasyMock.anyObject(String[][].class));
+		EasyMock.expectLastCall().anyTimes();
+		replay(ticTacToePlayerHelper);
+
 		ResponseEntity<String> response = controller.playGame();
 		Assert.assertEquals("Game Ended Successfully", response.getBody());
+
 	}
 }
-
