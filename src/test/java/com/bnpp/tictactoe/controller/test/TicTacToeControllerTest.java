@@ -1,4 +1,4 @@
-package com.bnpp.tictactoe.test;
+package com.bnpp.tictactoe.controller.test;
 
 import static org.powermock.api.easymock.PowerMock.replay;
 import static org.powermock.api.easymock.PowerMock.reset;

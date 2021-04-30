@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bnpp.tictactoe.helper.TicTacToeBoardHelper;
 import com.bnpp.tictactoe.helper.TicTacToePlayerHelper;
+import com.bnpp.tictactoe.utils.TicTacToeConstants;
 
 /**
  * 
@@ -48,7 +49,7 @@ public class TicTacToeController {
 		ticTacToePlayerHelper.playGame(board);
 
 		LOGGER.info("Game Ended");
-		return ResponseEntity.status(HttpStatus.OK).body("Game Ended Successfully");
+		return ResponseEntity.status(HttpStatus.OK).body(TicTacToeConstants.GAME_ENDED_MESSAGE);
 	}
 
 }
