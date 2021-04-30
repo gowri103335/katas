@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TicTacToeBoardHelper {
-	
+
 	public void displayBoard(String[][] board) {
-		
+
 	}
 
 }

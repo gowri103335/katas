@@ -80,7 +80,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>tictactoe</finalName>
+		<finalName>Tictactoe</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -94,7 +94,6 @@
 	<properties>
 		<spring.version>5.2.7.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
-		<mockito.version>3.3.3</mockito.version>
 		<powermock.version>2.0.7</powermock.version>
 		<log4j.version>2.14.1</log4j.version>
 	</properties>
