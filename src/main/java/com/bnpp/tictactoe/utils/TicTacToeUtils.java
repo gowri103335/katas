@@ -5,8 +5,10 @@ public class TicTacToeUtils {
 	private TicTacToeUtils() {
 
 	}
+
 	/**
 	 * method to draw the board on console.
+	 * 
 	 * @param board
 	 */
 	public static void drawBoard(String[][] board) {
@@ -20,6 +22,10 @@ public class TicTacToeUtils {
 			// This makes a new line so that each row is on a separate line
 			System.out.println();
 		}
+	}
+
+	public static boolean isPosOnBoardValid(String[][] board, int posEntered) {
+		return true;
 	}
 
 }
