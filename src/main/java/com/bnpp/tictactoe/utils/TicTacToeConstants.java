@@ -17,4 +17,6 @@ public class TicTacToeConstants {
 	public static final String POSITION_OUTOF_BOUND = "This position is out of the bounds of the board! Try again.";
 	public static final String ALREADY_MOVED_POSITION = "Someone has already made a move at this position! Try again.";
 	public static final String EMPTY_STRING = "";
+	public static final String X_MOVED_POSITION = "[x]";
+	public static final String O_MOVED_POSITION = "[o]";
 }

@@ -16,6 +16,10 @@ public class TicTacToePlayerHelper {
 
 	}
 
+	public boolean isGameEnded(String[][] board, String player1, String player2) {
+		return false;
+	}
+
 	/**
 	 * method to check which player has won the game
 	 * 
