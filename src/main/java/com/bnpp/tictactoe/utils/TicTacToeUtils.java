@@ -5,7 +5,10 @@ public class TicTacToeUtils {
 	private TicTacToeUtils() {
 
 	}
-
+	/**
+	 * method to draw the board on console.
+	 * @param board
+	 */
 	public static void drawBoard(String[][] board) {
 		System.out.println(TicTacToeConstants.BOARD);
 
