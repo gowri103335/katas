@@ -19,4 +19,6 @@ public class TicTacToeConstants {
 	public static final String EMPTY_STRING = "";
 	public static final String X_MOVED_POSITION = "[x]";
 	public static final String O_MOVED_POSITION = "[o]";
+	public static final String WON_MESSAGE = " has won! Congratulations.";
+	public static final String TIE_MESSAGE = "It's a tie!";
 }

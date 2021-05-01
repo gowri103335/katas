@@ -3,6 +3,7 @@ package com.bnpp.tictactoe.helper;
 import org.springframework.stereotype.Component;
 
 import com.bnpp.tictactoe.utils.TicTacToeConstants;
+import com.bnpp.tictactoe.utils.TicTacToeUtils;
 
 /**
  * 
@@ -16,8 +17,28 @@ public class TicTacToePlayerHelper {
 
 	}
 
+	/**
+	 * method to check if the game is ended by checking if any player has won or tie
+	 * with board is full
+	 * 
+	 * @param board
+	 * @param player1
+	 * @param player2
+	 * @return
+	 */
 	public boolean isGameEnded(String[][] board, String player1, String player2) {
-		return false;
+		boolean gameEnded = false;
+		if (playerWonGame(board).equals(TicTacToeConstants.X_MOVED_POSITION)) {
+			System.out.println(player1 + TicTacToeConstants.WON_MESSAGE);
+			gameEnded = true;
+		} else if (playerWonGame(board).equals(TicTacToeConstants.O_MOVED_POSITION)) {
+			System.out.println(player2 + TicTacToeConstants.WON_MESSAGE);
+			gameEnded = true;
+		} else if (TicTacToeUtils.isBoardFull(board)) {
+			System.out.println(TicTacToeConstants.TIE_MESSAGE);
+			gameEnded = true;
+		}
+		return gameEnded;
 	}
 
 	/**
