@@ -18,4 +18,10 @@ public class TicTacToeUtilsTest {
 		Assert.assertEquals(true, TicTacToeUtils.isPosOnBoardValid(emptyBoard, 1));
 	}
 
+	@Test
+	public void testIsBoardFull() {
+		String[][] board = { { "ab", "bc", "ca" }, { "de", "ef", "fd" }, { "gh", "hi", "ig" } };
+		Assert.assertEquals(true, TicTacToeUtils.isBoardFull(board));
+	}
+
 }
