@@ -63,7 +63,41 @@ public class BoardMapper {
 	 * @return
 	 */
 	public static String getBoardValue(String[][] board, int numVal) {
-		return "";
+
+		String crossOrO = null;
+		switch (numVal) {
+		case 1:
+			crossOrO = board[0][0];
+			break;
+
+		case 2:
+			crossOrO = board[0][1];
+			break;
+		case 3:
+			crossOrO = board[0][2];
+			break;
+		case 4:
+			crossOrO = board[1][0];
+			break;
+		case 5:
+			crossOrO = board[1][1];
+			break;
+		case 6:
+			crossOrO = board[1][2];
+			break;
+		case 7:
+			crossOrO = board[2][0];
+			break;
+		case 8:
+			crossOrO = board[2][1];
+			break;
+		case 9:
+			crossOrO = board[2][2];
+			break;
+		default:
+			crossOrO = null;
+		}
+		return crossOrO;
 	}
 
 }
