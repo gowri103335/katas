@@ -2,6 +2,8 @@
 --------------
 Problem statement: TicTacToe.md has the details to develop the program, rules and assumptions to be followed while coding.
 
+Assumption: Two different players only can play the game with no cheating.
+
 Solution: Restful webservice developed with postURL: http://localhost:8080/Tictactoe/startTicTacToeGame which is used to trigger the start of game.
 
 Compilation: Application is compiled with mvn clean install in cmd or clean install in any IDE like eclipse to generate the war file: TicTacToe.war
