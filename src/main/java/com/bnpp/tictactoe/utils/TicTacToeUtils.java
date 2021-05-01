@@ -54,6 +54,12 @@ public class TicTacToeUtils {
 		return posValid;
 	}
 
+	/**
+	 * method ot check if the board is full with all positions moved
+	 * 
+	 * @param board
+	 * @return
+	 */
 	public static boolean isBoardFull(String[][] board) {
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
