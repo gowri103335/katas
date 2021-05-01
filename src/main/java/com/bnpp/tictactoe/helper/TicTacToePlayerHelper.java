@@ -2,6 +2,8 @@ package com.bnpp.tictactoe.helper;
 
 import org.springframework.stereotype.Component;
 
+import com.bnpp.tictactoe.io.ConsoleIO;
+import com.bnpp.tictactoe.mapper.BoardMapper;
 import com.bnpp.tictactoe.utils.TicTacToeConstants;
 import com.bnpp.tictactoe.utils.TicTacToeUtils;
 
@@ -13,11 +15,90 @@ import com.bnpp.tictactoe.utils.TicTacToeUtils;
 @Component
 public class TicTacToePlayerHelper {
 
-	public void playGame(String[][] board) {
+	ConsoleIO console;
+
+	public void setConsoleIO(ConsoleIO input) {
+		this.console = input;
 	}
 
+	/**
+	 * method which starts to play game and has calls to other methods to complete
+	 * the game.
+	 * 
+	 * @param board
+	 */
+
+	public void playGame(String[][] board) {
+
+		// ask the players for their names
+		System.out.print(TicTacToeConstants.PLAYER1_MESSAGE);
+		String p1 = console.getUserInputString();
+		System.out.print(TicTacToeConstants.PLAYER2_MESSAGE);
+		String p2 = console.getUserInputString();
+		// player1 starts the game who gets x
+		boolean player1 = true;
+
+		// Create a gameEnded boolean and use it as the condition in the while loop
+		boolean gameEnded = false;
+		while (!gameEnded) {
+			// Draw the board
+			TicTacToeUtils.drawBoard(board);
+			// Print whose turn it is
+			if (player1) {
+				System.out.println(p1 + TicTacToeConstants.X_TURN);
+			} else {
+				System.out.println(p2 + TicTacToeConstants.O_TURN);
+			}
+			// Create a String variable that stores either 'x' or 'o' based on what player's
+			// turn it is
+			String crossOrO;
+			if (player1) {
+				crossOrO = TicTacToeConstants.X_MOVED_POSITION;
+			} else {
+				crossOrO = TicTacToeConstants.O_MOVED_POSITION;
+			}
+
+			// Initialize the enteredNum which represent number positions that correspond to
+			// a position on our board
+			int enteredNum = 0;
+			// Only break out of the while loop once the user enters a valid position
+			while (true) {
+				// Ask the user for what position they want to place their x or o
+				System.out.print(TicTacToeConstants.ENTER_NUMBER_MESSAGE);
+				enteredNum = console.getUserInputInt();
+				// validate the postion entered on board
+				if (TicTacToeUtils.isPosOnBoardValid(board, enteredNum)) {
+					break;
+				}
+			}
+			// Set the board array elements mapping with the number values
+			BoardMapper.setBoardValue(board, enteredNum, crossOrO);
+			// check if the game has ended and end while loop else give the turn to other
+			// player to play
+			if (isGameEnded(board, p1, p2)) {
+				gameEnded = true;
+			} else {
+				player1 = !player1;
+			}
+		}
+
+		// Draw the board at the end of the game
+		TicTacToeUtils.drawBoard(board);
+
+	}
+
+	/**
+	 * initializtion of board before play starts.
+	 * 
+	 * @param board
+	 */
 	public void initializeBoard(String[][] board) {
-		
+		// initialization of board
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				board[i][j] = TicTacToeConstants.MOVE_ALLOWED_POSITION;
+			}
+		}
 	}
 
 	/**

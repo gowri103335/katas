@@ -19,6 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.bnpp.tictactoe.controller.TicTacToeController;
 import com.bnpp.tictactoe.helper.TicTacToeBoardHelper;
 import com.bnpp.tictactoe.helper.TicTacToePlayerHelper;
+import com.bnpp.tictactoe.io.SystemIO;
 
 @RunWith(PowerMockRunner.class)
 @PowerMockRunnerDelegate(SpringJUnit4ClassRunner.class)
@@ -48,6 +49,10 @@ public class TicTacToeControllerTest {
 		replay(ticTacToeBoardhelper);
 
 		ticTacToePlayerHelper.playGame(EasyMock.anyObject(String[][].class));
+		EasyMock.expectLastCall().anyTimes();
+		ticTacToePlayerHelper.setConsoleIO(EasyMock.anyObject(SystemIO.class));
+		EasyMock.expectLastCall().anyTimes();
+		ticTacToePlayerHelper.initializeBoard(EasyMock.anyObject(String[][].class));
 		EasyMock.expectLastCall().anyTimes();
 		replay(ticTacToePlayerHelper);
 

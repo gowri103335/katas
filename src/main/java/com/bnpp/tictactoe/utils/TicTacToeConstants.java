@@ -21,4 +21,9 @@ public class TicTacToeConstants {
 	public static final String O_MOVED_POSITION = "[o]";
 	public static final String WON_MESSAGE = " has won! Congratulations.";
 	public static final String TIE_MESSAGE = "It's a tie!";
+	public static final String PLAYER1_MESSAGE = "Player 1, what is your name:";
+	public static final String PLAYER2_MESSAGE = "Player 2, what is your name:";
+	public static final String X_TURN = "'s Turn (x):";
+	public static final String O_TURN = "'s Turn (o):";
+	public static final String ENTER_NUMBER_MESSAGE = "Enter the number (1-9): ";
 }

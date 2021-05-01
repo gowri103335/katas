@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bnpp.tictactoe.helper.TicTacToeBoardHelper;
 import com.bnpp.tictactoe.helper.TicTacToePlayerHelper;
+import com.bnpp.tictactoe.io.SystemIO;
 import com.bnpp.tictactoe.utils.TicTacToeConstants;
 
 /**
@@ -46,6 +47,8 @@ public class TicTacToeController {
 		ticTacToeBoardhelper.displayBoard(initialBoard);
 
 		// players start game
+		ticTacToePlayerHelper.setConsoleIO(new SystemIO());
+		ticTacToePlayerHelper.initializeBoard(board);
 		ticTacToePlayerHelper.playGame(board);
 
 		LOGGER.info("Game Ended");

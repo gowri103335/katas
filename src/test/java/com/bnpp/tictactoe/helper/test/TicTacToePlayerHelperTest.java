@@ -13,6 +13,10 @@ public class TicTacToePlayerHelperTest {
 	@Test
 	public void testPlayGame() {
 		ticTacToePlayerHelper = new TicTacToePlayerHelper();
+		SysIOtest sysIOtest = new SysIOtest();
+		sysIOtest.setInputInt(9);
+		sysIOtest.setInputStr("player");
+		ticTacToePlayerHelper.setConsoleIO(sysIOtest);
 		String[][] board = { { "a", "b", "c" }, { "d", "e", "f" }, { "g", "h", "[ ]" } };
 		ticTacToePlayerHelper.playGame(board);
 		Assert.assertEquals("[x]", board[2][2]);
