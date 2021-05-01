@@ -20,8 +20,11 @@ public class TicTacToeUtilsTest {
 
 	@Test
 	public void testIsBoardFull() {
+		String[][] emptyBoard = new String[3][3];
+		emptyBoard[0][0] = "[ ]";
 		String[][] board = { { "ab", "bc", "ca" }, { "de", "ef", "fd" }, { "gh", "hi", "ig" } };
 		Assert.assertEquals(true, TicTacToeUtils.isBoardFull(board));
+		Assert.assertEquals(false, TicTacToeUtils.isBoardFull(emptyBoard));
 	}
 
 }

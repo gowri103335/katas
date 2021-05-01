@@ -55,7 +55,14 @@ public class TicTacToeUtils {
 	}
 
 	public static boolean isBoardFull(String[][] board) {
-		return false;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if (board[i][j].equals(TicTacToeConstants.MOVE_ALLOWED_POSITION)) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 }
