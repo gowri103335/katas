@@ -11,6 +11,22 @@ public class TicTacToePlayerHelperTest {
 	TicTacToePlayerHelper ticTacToePlayerHelper = null;
 
 	@Test
+	public void testPlayGame() {
+		ticTacToePlayerHelper = new TicTacToePlayerHelper();
+		String[][] board = { { "a", "b", "c" }, { "d", "e", "f" }, { "g", "h", "[ ]" } };
+		ticTacToePlayerHelper.playGame(board);
+		Assert.assertEquals("[x]", board[2][2]);
+	}
+
+	@Test
+	public void testInitializeBoard() {
+		ticTacToePlayerHelper = new TicTacToePlayerHelper();
+		String[][] board = new String[3][3];
+		ticTacToePlayerHelper.initializeBoard(board);
+		Assert.assertNotNull(board[2][2]);
+	}
+
+	@Test
 	public void testPlayerWonGame() {
 		ticTacToePlayerHelper = new TicTacToePlayerHelper();
 		String[][] boardRowEqual = { { "a", "a", "a" }, {}, {} };

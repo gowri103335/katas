@@ -14,7 +14,10 @@ import com.bnpp.tictactoe.utils.TicTacToeUtils;
 public class TicTacToePlayerHelper {
 
 	public void playGame(String[][] board) {
+	}
 
+	public void initializeBoard(String[][] board) {
+		
 	}
 
 	/**
