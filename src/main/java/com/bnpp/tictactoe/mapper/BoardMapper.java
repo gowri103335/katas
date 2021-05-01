@@ -10,8 +10,10 @@ public class BoardMapper {
 	private BoardMapper() {
 
 	}
+
 	/**
 	 * method to map the numbers (1-9) on tic-tac-toe board to board array values
+	 * 
 	 * @param board
 	 * @param enteredNum
 	 * @param crossOrO
@@ -51,6 +53,17 @@ public class BoardMapper {
 
 		}
 
+	}
+
+	/**
+	 * method to get the board array values from the number values.
+	 * 
+	 * @param board
+	 * @param numVal
+	 * @return
+	 */
+	public static String getBoardValue(String[][] board, int numVal) {
+		return "";
 	}
 
 }

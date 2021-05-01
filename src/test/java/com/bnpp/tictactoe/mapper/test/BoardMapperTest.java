@@ -30,4 +30,19 @@ public class BoardMapperTest {
 		Assert.assertEquals("i", board[2][2]);
 	}
 
+	@Test
+	public void testGetBoardValue() {
+		String[][] board = { { "a", "b", "c" }, { "d", "e", "f" }, { "g", "h", "i" } };
+		Assert.assertEquals("a", BoardMapper.getBoardValue(board, 1));
+		Assert.assertEquals("b", BoardMapper.getBoardValue(board, 2));
+		Assert.assertEquals("c", BoardMapper.getBoardValue(board, 3));
+		Assert.assertEquals("d", BoardMapper.getBoardValue(board, 4));
+		Assert.assertEquals("e", BoardMapper.getBoardValue(board, 5));
+		Assert.assertEquals("f", BoardMapper.getBoardValue(board, 6));
+		Assert.assertEquals("g", BoardMapper.getBoardValue(board, 7));
+		Assert.assertEquals("h", BoardMapper.getBoardValue(board, 8));
+		Assert.assertEquals("i", BoardMapper.getBoardValue(board, 9));
+		Assert.assertEquals(null, BoardMapper.getBoardValue(board, 10));
+	}
+
 }
