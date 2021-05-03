@@ -1,7 +1,8 @@
 package com.bnpp.tictactoe.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,6 +37,7 @@ public class TicTacToeController {
 	 */
 	@PostMapping("/startTicTacToeGame")
 	public ResponseEntity<String> playGame() {
+		DOMConfigurator.configure(TicTacToeConstants.LOG_FILE);
 		LOGGER.info("Game Started");
 		// Create a 3x3 array that represents our tic tac toe board initially
 		String[][] initialBoard = new String[3][3];

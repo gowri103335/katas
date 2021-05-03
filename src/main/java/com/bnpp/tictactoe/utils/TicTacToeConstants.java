@@ -26,4 +26,5 @@ public class TicTacToeConstants {
 	public static final String X_TURN = "'s Turn (x):";
 	public static final String O_TURN = "'s Turn (o):";
 	public static final String ENTER_NUMBER_MESSAGE = "Enter the number (1-9): ";
+	public static final String LOG_FILE = "log4j.xml";
 }
